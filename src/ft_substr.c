@@ -6,7 +6,7 @@
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:47:38 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/22 12:22:32 by alen             ###   ########.fr       */
+/*   Updated: 2025/01/22 14:00:52 by apatvaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ret_str[i] = '\0';
 	return (ret_str);
 }
-// int main()
-// {
-// 	printf("%s\n", ft_substr("hola", 4294967295, 18446744073709551615));	
-// }
