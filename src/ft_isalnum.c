@@ -6,11 +6,14 @@
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 14:34:11 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/15 14:58:39 by alen             ###   ########.fr       */
+/*   Updated: 2025/01/21 14:46:11 by apatvaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
+int	ft_isdigit(int c);
+int	ft_isalpha(int c);
 
 int	ft_isalnum(int c)
 {

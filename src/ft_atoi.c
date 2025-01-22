@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 17:34:42 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/21 16:34:23 by apatvaka         ###   ########.fr       */
+/*   Created: 2025/01/20 15:58:43 by apatvaka          #+#    #+#             */
+/*   Updated: 2025/01/21 12:10:40 by alen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	unsigned char	*ret_s;
-	size_t			i;
+	int	i;
+	int	is_negativ;
+	int	num;
 
+	num = 0;
 	i = 0;
-	ret_s = (unsigned char *)s;
-	while (i < n)
+	is_negativ = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		++i;
+	if (str[i] == '-')
 	{
-		if (ret_s[i] == (unsigned char)c)
-			return ((void *)s + i);
+		is_negativ *= -1;
 		++i;
 	}
-	return (NULL);
+	else if (str[i] == '+')
+		++i;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + str[i] - '0';
+		++i;
+	}
+	return (is_negativ * num);
 }
