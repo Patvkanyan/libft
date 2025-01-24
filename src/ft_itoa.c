@@ -6,7 +6,7 @@
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:46:14 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/24 15:08:31 by alen             ###   ########.fr       */
+/*   Updated: 2025/01/24 15:25:20 by apatvaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 
 	len_int = ft_len_int(n);
 	if (n == 0)
-		return(ft_strdup("0"));
+		return (ft_strdup("0"));
 	ret_str = (char *)malloc(len_int + 1);
 	if (!ret_str)
 		return (NULL);
@@ -63,11 +63,3 @@ char	*ft_itoa(int n)
 	}
 	return (ret_str);
 }
-
-/*int main()
-{
-	char *str;
-	str = ft_itoa(0);
-	printf("%s\n", str);
-	free(str);
-}*/
