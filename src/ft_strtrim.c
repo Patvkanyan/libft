@@ -6,7 +6,7 @@
 /*   By: apatvaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 13:47:32 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/22 14:13:37 by apatvaka         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:45:52 by apatvaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,20 @@
 
 char	*ft_strtrim(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	len_s1;
-	size_t	len_s2;
+	size_t	start;
+	size_t	end;
 
-	if (!s1 || !s2)
-		return (NULL);
-	i = 0;
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	while (s1[i] == s2[i])
-		++i;
-	while (s1[len_s1] == s2[len_s2])
-	{
-		--len_s1;
-		--len_s2;
-	}
-	return (ft_substr(s1, i, len_s1 - i + 1));
-}
-
-
-int main()
-{
-   	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char *s2 = "Hello \t  Please\n Trim me !";
- 	char *ret = ft_strtrim(s1, " \n\t");
-
-	printf("%s\n%s\n", ret,s2);
+	if (!s1 || !*s1)
+		return (ft_strdup(""));
+	if (!s2 || !*s2)
+		return (ft_strdup((char *)s1));
+	end = ft_strlen(s1) - 1;
+	start = 0;
+	while (ft_strchr(s2, s1[start]) && start <= end)
+		++start;
+	if (start > end)
+		return (ft_strdup(""));
+	while (ft_strchr(s2, s1[end]) && end >= 0)
+		--end;
+	return (ft_substr(s1, start, end - start + 1));
 }
