@@ -6,14 +6,14 @@
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 15:01:17 by alen              #+#    #+#             */
-/*   Updated: 2025/01/26 16:20:10 by alen             ###   ########.fr       */
+/*   Updated: 2025/01/26 18:08:13 by alen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdio.h>
 
-static	int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	count;
 	int	in_word;
@@ -38,7 +38,7 @@ static	int	count_words(char const *s, char c)
 	return (count);
 }
 
-static	int	malloc_words(char **ret_str, int index, size_t len)
+static int	malloc_words(char **ret_str, int index, size_t len)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ static	int	malloc_words(char **ret_str, int index, size_t len)
 	return (0);
 }
 
-static	int	len_word(char **ret_str, const char *s, char separator)
+static int	len_word(char **ret_str, const char *s, char separator)
 {
 	size_t	len_word;
 	int		index;
@@ -98,6 +98,12 @@ char	**ft_split(char const *s, char c)
 		if (!ret_str)
 			return (NULL);
 		ret_str[0] = ft_strdup((char *)s);
+		if (!ret_str[0])
+		{
+			free(ret_str[0]);
+			free(ret_str);
+			return (NULL);
+		}
 		ret_str[1] = NULL;
 		return (ret_str);
 	}
