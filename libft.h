@@ -6,7 +6,7 @@
 /*   By: alen <alen@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:02:23 by apatvaka          #+#    #+#             */
-/*   Updated: 2025/01/27 17:52:12 by alen             ###   ########.fr       */
+/*   Updated: 2025/01/27 18:54:00 by apatvaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
 #endif

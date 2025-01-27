@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apatvaka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 18:22:57 by apatvaka          #+#    #+#             */
+/*   Updated: 2025/01/27 18:23:52 by apatvaka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	len;
 
 	len = 1;
 	if (!lst)
-		return (0);	
+		return (0);
 	while (lst->next)
 	{
 		++len;
-		lst = lst->next; 
+		lst = lst->next;
 	}
 	return (len);
 }
