@@ -23,7 +23,7 @@ all:			$(NAME)
 $(NAME):		$(SRC_OBJS)
 				ar rcs $(NAME) $(SRC_OBJS)
 
-%.o: %.c
+%.o:			%.c
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
